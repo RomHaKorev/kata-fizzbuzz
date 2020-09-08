@@ -3,14 +3,15 @@ class Fizzbuzz(private val input: Input) {
     fun evaluate(): String {
         (input is_multiple_of 3 display "fizz") also
         (input is_multiple_of 5 display "buzz") otherwise
-        { number() }
+        display_number()
 
         return result
     }
 
-    private fun number(): Boolean {
-        result += input.toString()
-        return true
+    private fun display_number(): () -> Boolean {
+        return { result += input.toString()
+            true
+        }
     }
 
     private fun add(s: String): Boolean {
